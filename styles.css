@@ -1,0 +1,16 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 6.25% 6.25% 6.25% 
+    6.25% 6.25% 6.25% 6.25% 6.25% 6.25% 6.25% 
+    6.25% 6.25% 6.25% 6.25% 6.25% 6.25%;
+}
+
+div {
+    display: flex;
+    padding: 10px;
+}
