@@ -32,14 +32,10 @@ body {
     background-color: white;
 }
 
-.boxes:hover {
-    display: green;
-}
-
 .boxes {
     display: flex;
     border: solid;
-    border: black;
+    border: black; /* DONT REMOVE - Breaks for some reason */
     border-width: 10px;
 }
 

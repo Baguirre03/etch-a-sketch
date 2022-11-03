@@ -2,9 +2,13 @@ var input = document.querySelector('#amountGrid')
 var enter = document.querySelector('.enter')
 let pad = document.querySelector('.pad')
 
+input.value = "Enter a number 1-100"
+
 enter.addEventListener('click', (e) => {
     if (input.value > 100) {
         alert("Number is too high! Nothing above 100")
+    } else if (isNaN(input.value)) {
+        alert("Not a number!")
     } else {
         removeSketch();
         createBoard(input.value)
@@ -23,7 +27,7 @@ function createBoard(size) {
         box.classList.add('boxes')
         box.style.color = "white"
         box.addEventListener('mouseover', () => {
-            box.style.backgroundColor = "orange"
+            box.style.backgroundColor = "blue"
         })
 
     let resetButton = document.querySelector('#resetBtn')
