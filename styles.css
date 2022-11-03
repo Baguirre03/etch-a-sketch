@@ -1,16 +1,74 @@
 body {
+    margin: 0;
+    background-color: lightblue;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    background-color: lightblue;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.pad-container {
     display: flex;
     justify-content: center;
 }
 
-.container {
+.pad {
+    width: 500px;
+    height: 500px;
     display: grid;
-    grid-template-columns: 6.25% 6.25% 6.25% 
-    6.25% 6.25% 6.25% 6.25% 6.25% 6.25% 6.25% 
-    6.25% 6.25% 6.25% 6.25% 6.25% 6.25%;
+    align-content: center;
+    border: black;
+    border-style: solid;
+    background-color: white;
 }
 
-div {
+.boxes:hover {
+    display: green;
+}
+
+.boxes {
     display: flex;
-    padding: 10px;
+    border: solid;
+    border: black;
+    border-width: 10px;
+}
+
+.bottomContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gridInputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: auto;
+}
+
+button {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
 }
