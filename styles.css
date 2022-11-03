@@ -27,16 +27,10 @@ body {
     height: 500px;
     display: grid;
     align-content: center;
-    border: black;
+    border: red;
     border-style: solid;
     background-color: white;
-}
-
-.boxes {
-    display: flex;
-    border: solid;
-    border: black; /* DONT REMOVE - Breaks for some reason */
-    border-width: 10px;
+    border-width: 5px;
 }
 
 .bottomContainer {

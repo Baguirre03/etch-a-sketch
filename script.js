@@ -2,8 +2,12 @@ var input = document.querySelector('#amountGrid')
 var enter = document.querySelector('.enter')
 let pad = document.querySelector('.pad')
 let rgb = document.querySelector('#rgb')
+let gridActive = document.querySelector('#putGrid')
+let gridDeactive = document.querySelector('#noGrid')
+let resetButton = document.querySelector('#resetBtn')
 
-input.value = "Enter a number 1-100"
+
+input.value = "16"
 
 //Creats new grid when click enter BTN
 enter.addEventListener('click', (e) => {
@@ -29,15 +33,21 @@ function createBoard(size) {
         pad.appendChild(box)
         box.classList.add('boxes')
         box.style.color = "white"
-        box.addEventListener('mouseover', () => {
-            box.style.backgroundColor = "blue"
-        })
+        box.addEventListener('mouseover', (hoverSquare));
 
-    let resetButton = document.querySelector('#resetBtn')
+    //RESET COLORING
         resetButton.addEventListener('click', () => {
         box.style.backgroundColor = "white"
         }) 
-    }
+    //ADD GRID
+        gridActive.addEventListener('click', () => {
+            box.style = "border-color: black; border-style: solid; border-width: .5px"
+    })
+    //REMOVE GRID
+        gridDeactive.addEventListener('click', () => {
+            box.style = "border-color: black; border-style: none; border-width: .5px"
+        })
+}
 }
 
 //creates user choice grid at start of page input
@@ -78,8 +88,12 @@ function removeSketch () {
     }
 }
 
-function changeColor(color) {
-
+function hoverSquare() {
+    this.style.backgroundColor = "blue"
 }
 
+rgb.addEventListener('click', (e) => changeColor("rgb"))
 
+function changeColor(choice) {
+    color = choice
+}
