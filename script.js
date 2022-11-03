@@ -5,6 +5,9 @@ let rgb = document.querySelector('#rgb')
 let gridActive = document.querySelector('#putGrid')
 let gridDeactive = document.querySelector('#noGrid')
 let resetButton = document.querySelector('#resetBtn')
+let eraser = document.querySelector(`#eraser`)
+let black = document.querySelector('#black')
+let blue = document.querySelector('#blue')
 
 
 input.value = "16"
@@ -88,11 +91,20 @@ function removeSketch () {
     }
 }
 
+//Changing background colors
+
 function hoverSquare() {
-    this.style.backgroundColor = "blue"
+    this.style.backgroundColor = color
 }
 
-rgb.addEventListener('click', (e) => changeColor("rgb"))
+let color = "blue"
+
+rgb.addEventListener('click', () => changeColor("rgb"))
+eraser.addEventListener('click', () => changeColor("white"))
+black.addEventListener('click', () => changeColor("black"))
+blue.addEventListener('click', () => changeColor("blue"))
+
+
 
 function changeColor(choice) {
     color = choice
