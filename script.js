@@ -9,7 +9,7 @@ let eraser = document.querySelector(`#eraser`)
 let black = document.querySelector('#black')
 let blue = document.querySelector('#blue')
 
-
+//Default input
 input.value = "16"
 
 //Creats new grid when click enter BTN
@@ -94,18 +94,39 @@ function removeSketch () {
 //Changing background colors
 
 function hoverSquare() {
+    if (color === "rainbow") {
+        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
+    } else {
     this.style.backgroundColor = color
 }
+}
 
-let color = "blue"
+//Starting color
+let color = "green"
 
-eraser.addEventListener('click', () => changeColor("white"))
+//Changes when button clicks
+function changeColor(choice) {
+    color = choice
+}
+
+//eraser button changes others styles and selector to white
+eraser.addEventListener('click', () => {
+    if (blue.style.backgroundColor === "blue" ||
+        rainbow.style.backgroundColor === "!white" ||
+        black.style.backgroundColor === "black") {
+            blue.style = "background-color: white; color: black"
+            black.style = "background-color: white; color: black"
+        changeColor("white")
+    } else {
+        changeColor("white")
+        }
+})
 
 //Selected button is what shown on screen
 
-rainbow.addEventListener('click', () => changeColor("rainbow"))
-
-
+rainbow.addEventListener('click', () => { 
+    changeColor("rainbow")
+})
 
 
 black.addEventListener('click', () => {
@@ -155,7 +176,3 @@ blue.addEventListener('click', () => {
         changeColor("blue")
     }
 })
-
-function changeColor(choice) {
-    color = choice
-}
