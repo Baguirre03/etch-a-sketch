@@ -1,7 +1,7 @@
 var input = document.querySelector('#amountGrid')
 var enter = document.querySelector('.enter')
 let pad = document.querySelector('.pad')
-let rgb = document.querySelector('#rgb')
+let rainbow = document.querySelector('#rainbow')
 let gridActive = document.querySelector('#putGrid')
 let gridDeactive = document.querySelector('#noGrid')
 let resetButton = document.querySelector('#resetBtn')
@@ -99,12 +99,62 @@ function hoverSquare() {
 
 let color = "blue"
 
-rgb.addEventListener('click', () => changeColor("rgb"))
 eraser.addEventListener('click', () => changeColor("white"))
-black.addEventListener('click', () => changeColor("black"))
-blue.addEventListener('click', () => changeColor("blue"))
+
+//Selected button is what shown on screen
+
+rainbow.addEventListener('click', () => changeColor("rainbow"))
 
 
+
+
+black.addEventListener('click', () => {
+    if (blue.style.backgroundColor === "blue" || 
+    rainbow.style.backgroundColor === "!white") {
+
+        blue.style.backgroundColor = "white"
+    blue.style.color = "black"
+    black.style.backgroundColor = "black"
+    black.style.color = "white"
+    rainbow.style.backgroundColor = "white"
+    rainbow.style.color = "black"
+
+    changeColor("black")
+
+    } else if (black.style.backgroundColor === "black") {
+        black.style.backgroundColor = "white"
+        black.style.color = "black"
+        changeColor("white")
+    } else {
+        black.style.backgroundColor = "black"
+        black.style.color = "white"
+        changeColor("black")
+    }
+})
+
+blue.addEventListener('click', () => {
+    if (black.style.backgroundColor === "black" || 
+    rainbow.style.backgroundColor === "!white") {
+
+    blue.style.backgroundColor = "blue"
+    blue.style.color = "white"
+    black.style.backgroundColor = "white"
+    black.style.color = "black"
+    rainbow.style.backgroundColor = "white"
+    rainbow.style.color = "black"
+
+    changeColor("blue")
+
+    } else if (blue.style.backgroundColor === "blue") {
+        blue.style.backgroundColor = "white"
+        blue.style.color = "black"
+        changeColor("white")
+    } else {
+        blue.style.backgroundColor = "blue"
+        blue.style.color = "white"
+        changeColor("blue")
+    }
+})
 
 function changeColor(choice) {
     color = choice

@@ -61,13 +61,33 @@ button {
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 10px;
+    width: 200;
+    border-color: black;
 }
 
-.buttons {
-    display: flex;
-    flex-wrap: wrap;
-    width: 200px;
-    gap: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+button:hover {
+    transform:scale(1.2);
+    border-color: red;
+    border-width: 1px;
 }
+
+.buttons-container {
+    display: flex;
+    gap: 15px;
+}
+
+#black:hover {
+    background-color: black;
+    color: white;
+}
+
+#blue:hover {
+    background-color: blue;
+    color: white;
+}
+
+#rainbow:hover {
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, red);
+    animation:slidebg 2s linear infinite;
+}
+
