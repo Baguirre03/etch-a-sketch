@@ -112,10 +112,11 @@ function changeColor(choice) {
 //eraser button changes others styles and selector to white
 eraser.addEventListener('click', () => {
     if (blue.style.backgroundColor === "blue" ||
-        rainbow.style.backgroundColor === "!white" ||
+        rainbow.style.backgroundColor !== "white" ||
         black.style.backgroundColor === "black") {
             blue.style = "background-color: white; color: black"
             black.style = "background-color: white; color: black"
+            rainbow.style = "background-color: white; color: black"
         changeColor("white")
     } else {
         changeColor("white")
@@ -125,13 +126,30 @@ eraser.addEventListener('click', () => {
 //Selected button is what shown on screen
 
 rainbow.addEventListener('click', () => { 
+    if (black.style.backgroundColor === "black" || 
+    blue.style.backgroundColor === "blue") {
+
+    blue.style.backgroundColor = "white"
+    blue.style.color = "black"
+    black.style.backgroundColor = "white"
+    black.style.color = "black"
+    rainbow.style.backgroundColor = "#" + randomColor
+
     changeColor("rainbow")
-})
+
+    } else if (rainbow.style.backgroundColor !== "white") {
+        rainbow.style.backgroundColor = "white"
+        rainbow.style.color = "black"
+        changeColor("white")
+    } else {
+        rainbow.style.backgroundColor = "#" + randomColor
+        changeColor("rainbow")
+    }})
 
 
 black.addEventListener('click', () => {
     if (blue.style.backgroundColor === "blue" || 
-    rainbow.style.backgroundColor === "!white") {
+    rainbow.style.backgroundColor !== "white") {
 
         blue.style.backgroundColor = "white"
     blue.style.color = "black"
@@ -155,7 +173,7 @@ black.addEventListener('click', () => {
 
 blue.addEventListener('click', () => {
     if (black.style.backgroundColor === "black" || 
-    rainbow.style.backgroundColor === "!white") {
+    rainbow.style.backgroundColor !== "!white") {
 
     blue.style.backgroundColor = "blue"
     blue.style.color = "white"
@@ -166,7 +184,7 @@ blue.addEventListener('click', () => {
 
     changeColor("blue")
 
-    } else if (blue.style.backgroundColor === "blue") {
+    } else if (blue.style.color === "white") {
         blue.style.backgroundColor = "white"
         blue.style.color = "black"
         changeColor("white")
@@ -176,3 +194,11 @@ blue.addEventListener('click', () => {
         changeColor("blue")
     }
 })
+
+//random background color for rainbow
+
+const randomColor = Math.floor(Math.random()*16777215).toString(16);
+
+function rainbowColor() {
+    rainbow.style.backgroundColor = "#" + randomColor
+}
