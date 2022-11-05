@@ -125,80 +125,79 @@ eraser.addEventListener('click', () => {
 
 //Selected button is what shown on screen
 
-rainbow.addEventListener('click', () => { 
-    if (black.style.backgroundColor === "black" || 
-    blue.style.backgroundColor === "blue") {
-
-    blue.style.backgroundColor = "white"
-    blue.style.color = "black"
-    black.style.backgroundColor = "white"
-    black.style.color = "black"
-    rainbow.style.backgroundColor = "#" + randomColor
-
-    changeColor("rainbow")
-
-    } else if (rainbow.style.backgroundColor !== "white") {
-        rainbow.style.backgroundColor = "white"
-        rainbow.style.color = "black"
-        changeColor("white")
-    } else {
-        rainbow.style.backgroundColor = "#" + randomColor
-        changeColor("rainbow")
-    }})
-
-
-black.addEventListener('click', () => {
-    if (blue.style.backgroundColor === "blue" || 
-    rainbow.style.backgroundColor !== "white") {
-
-        blue.style.backgroundColor = "white"
-    blue.style.color = "black"
-    black.style.backgroundColor = "black"
-    black.style.color = "white"
-    rainbow.style.backgroundColor = "white"
-    rainbow.style.color = "black"
-
-    changeColor("black")
-
-    } else if (black.style.backgroundColor === "black") {
-        black.style.backgroundColor = "white"
-        black.style.color = "black"
-        changeColor("white")
-    } else {
-        black.style.backgroundColor = "black"
-        black.style.color = "white"
-        changeColor("black")
-    }
-})
-
-blue.addEventListener('click', () => {
-    if (black.style.backgroundColor === "black" || 
-    rainbow.style.backgroundColor !== "!white") {
-
-    blue.style.backgroundColor = "blue"
-    blue.style.color = "white"
-    black.style.backgroundColor = "white"
-    black.style.color = "black"
-    rainbow.style.backgroundColor = "white"
-    rainbow.style.color = "black"
-
-    changeColor("blue")
-
-    } else if (blue.style.color === "white") {
+    rainbow.addEventListener('click', () => { 
+        if (black.style.backgroundColor === "black" || 
+        blue.style.backgroundColor === "blue") {
+    
         blue.style.backgroundColor = "white"
         blue.style.color = "black"
-        changeColor("white")
-    } else {
+        black.style.backgroundColor = "white"
+        black.style.color = "black"
+        rainbow.style.backgroundColor = "#" + randomColor
+    
+        changeColor("rainbow")
+    
+        } else if (rainbow.style.backgroundColor !== "white") {
+            rainbow.style.backgroundColor = "white"
+            rainbow.style.color = "black"
+            changeColor("white")
+        } else {
+            rainbow.style.backgroundColor = "#" + randomColor
+            changeColor("rainbow")
+        }
+    })
+    
+    
+    black.addEventListener('click', () => {
+        if (blue.style.backgroundColor === "blue" || 
+        rainbow.style.backgroundColor !== "white") {
+    
+            blue.style.backgroundColor = "white"
+        blue.style.color = "black"
+        black.style.backgroundColor = "black"
+        black.style.color = "white"
+        rainbow.style.backgroundColor = "white"
+        rainbow.style.color = "black"
+    
+        changeColor("black")
+    
+        } else if (black.style.backgroundColor === "black") {
+            black.style.backgroundColor = "white"
+            black.style.color = "black"
+            changeColor("white")
+        } else {
+            black.style.backgroundColor = "black"
+            black.style.color = "white"
+            changeColor("black")
+        }
+    })
+    
+    blue.addEventListener('click', () => {
+        if (black.style.backgroundColor === "black" || 
+        rainbow.style.backgroundColor !== "white") {
+    
         blue.style.backgroundColor = "blue"
         blue.style.color = "white"
+        black.style.backgroundColor = "white"
+        black.style.color = "black"
+        rainbow.style.backgroundColor = "white"
+        rainbow.style.color = "black"
+    
         changeColor("blue")
-    }
-})
+    
+        } else if (blue.style.backgroundColor === "blue") {
+            blue.style.backgroundColor = "white"
+            blue.style.color = "black"
+            changeColor("white")
+        } else {
+            blue.style.backgroundColor = "blue"
+            blue.style.color = "white"
+            changeColor("blue")
+        }
+    })
+
 
 //random background color for rainbow
 
 const randomColor = Math.floor(Math.random()*16777215).toString(16);
 
-function rainbowColor() {
-    rainbow.style.backgroundColor = "#" + randomColor
-}
